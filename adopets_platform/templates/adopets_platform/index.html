@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load custom_filters %}
+{% block content %}
+<div class="container-fluid mt-5" style="width: 90%; margin: auto;">
+    <h2 class="text-center mb-4">Find Your Perfect Pet</h2>
+    {% if user.is_authenticated %}
+    <div class="text-center mt-4">
+        <a href="{% url 'add_pet' %}" class="btn btn-success">Add a New Pet</a>
+    </div>
+    <br><br>
+    {% endif %}
+    {% if messages %}
+    <div class="alert alert-success" role="alert" id="success-message">
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+    </div>
+    <script>
+        setTimeout(function () {
+            var message = document.getElementById('success-message');
+            if (message) {
+                message.style.display = 'none';
+            }
+        }, 6000); // Hide message after 6 seconds
+    </script>
+    {% endif %}
+    <form method="get" class="justify-content-center">
+        <div class="form-row align-items-end justify-content-center mb-3">
+            <div class="col-md-2">
+                <label for="{{ form.species.id_for_label }}">Species</label>
+                {{ form.species|add_class:"form-control" }}
+            </div>
+            <div class="col-md-2">
+                <label for="{{ form.breed.id_for_label }}">Breed</label>
+                {{ form.breed|add_class:"form-control" }}
+            </div>
+            <div class="col-md-2">
+                <label for="{{ form.city.id_for_label }}">City</label>
+                {{ form.city|add_class:"form-control" }}
+            </div>
+            <div class="col-md-2">
+                <label for="{{ form.country.id_for_label }}">Country</label>
+                {{ form.country|add_class:"form-control" }}
+            </div>
+            <div class="col-md-2">
+                <label for="{{ form.posted_by.id_for_label }}">Posted by</label>
+                {{ form.posted_by|add_class:"form-control" }}
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary w-100">Search</button>
+            </div>
+        </div>
+    </form>
+    <div class="grid-container mt-4">
+      {% for pet in pets %}
+        <div class="card">
+          <img src="{{ pet.photo.url }}" class="card-img-top img-fluid" alt="{{ pet.name }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ pet.name }}</h5>
+            <p class="card-text"><strong>Gender:</strong> {{ pet.gender }}</p>
+            <p class="card-text"><i class="fas fa-map-marker-alt"></i> {{ pet.city }}, {{ pet.country }}</p>
+            <a href="{% url 'pet_detail' pet.id %}" class="card-button-bottom-left">View Details</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+</div>
+<br><br>
+{% endblock %}

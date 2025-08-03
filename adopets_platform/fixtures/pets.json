@@ -1,0 +1,242 @@
+[
+    {
+        "model": "adopets_platform.Pet",
+        "pk": 1,
+        "fields": {
+            "name": "Buddy",
+            "species": "Dog",
+            "breed": "Golden Retriever",
+            "age": 3,
+            "description": "Friendly and energetic",
+            "photo": "path_to_photo",
+            "city": "Berlin",
+            "country": "Germany",
+            "posted_by": 1,
+            "posted_at": "2024-10-14T15:46:00Z"
+        }
+    },
+    {
+        "model": "adopets_platform.Pet",
+        "pk": 2,
+        "fields": {
+            "name": "Whiskers",
+            "species": "Cat",
+            "breed": "Siamese",
+            "age": 2,
+            "description": "Quiet and loves to cuddle",
+            "photo": "path_to_photo",
+            "city": "Munich",
+            "country": "Germany",
+            "posted_by": 1,
+            "posted_at": "2024-10-14T15:46:00Z"
+        }
+    },
+    {
+        "model": "adopets_platform.Pet",
+        "pk": 3,
+        "fields": {
+            "name": "Max",
+            "species": "Dog",
+            "breed": "Labrador",
+            "age": 4,
+            "description": "Loyal and playful",
+            "photo": "path_to_photo",
+            "city": "Frankfurt",
+            "country": "Germany",
+            "posted_by": 1,
+            "posted_at": "2024-10-14T15:46:00Z"
+        }
+    },
+    {
+        "model": "adopets_platform.Pet",
+        "pk": 4,
+        "fields": {
+            "name": "Luna",
+            "species": "Cat",
+            "breed": "British Shorthair",
+            "age": 1,
+            "description": "Gentle and affectionate",
+            "photo": "path_to_photo",
+            "city": "Cologne",
+            "country": "Germany",
+            "posted_by": 1,
+            "posted_at": "2024-10-14T15:46:00Z"
+        }
+    },
+    {
+        "model": "adopets_platform.Pet",
+        "pk": 5,
+        "fields": {
+            "name": "Bella",
+            "species": "Dog",
+            "breed": "Poodle",
+            "age": 2,
+            "description": "Smart and friendly",
+            "photo": "path_to_photo",
+            "city": "Hamburg",
+            "country": "Germany",
+            "posted_by": 1,
+            "posted_at": "2024-10-14T15:46:00Z"
+        }
+    },
+    {
+        "model": "adopets_platform.Pet",
+        "pk": 6,
+        "fields": {
+            "name": "Oliver",
+            "species": "Cat",
+            "breed": "Maine Coon",
+            "age": 3,
+            "description": "Gentle giant",
+            "photo": "path_to_photo",
+            "city": "Stuttgart",
+            "country": "Germany",
+            "posted_by": 1,
+            "posted_at": "2024-10-14T15:46:00Z"
+        }
+    },
+    {
+        "model": "adopets_platform.Pet",
+        "pk": 7,
+        "fields": {
+            "name": "Charlie",
+            "species": "Dog",
+            "breed": "Beagle",
+            "age": 4,
+            "description": "Curious and playful",
+            "photo": "path_to_photo",
+            "city": "Düsseldorf",
+            "country": "Germany",
+            "posted_by": 1,
+            "posted_at": "2024-10-14T15:46:00Z"
+        }
+    },
+    {
+        "model": "adopets_platform.Pet",
+        "pk": 8,
+        "fields": {
+            "name": "Simba",
+            "species": "Cat",
+            "breed": "Abyssinian",
+            "age": 2,
+            "description": "Active and playful",
+            "photo": "path_to_photo",
+            "city": "Leipzig",
+            "country": "Germany",
+            "posted_by": 1,
+            "posted_at": "2024-10-14T15:46:00Z"
+        }
+    },
+    {
+        "model": "adopets_platform.Pet",
+        "pk": 9,
+        "fields": {
+            "name": "Molly",
+            "species": "Dog",
+            "breed": "Dachshund",
+            "age": 1,
+            "description": "Lively and affectionate",
+            "photo": "path_to_photo",
+            "city": "Dortmund",
+            "country": "Germany",
+            "posted_by": 1,
+            "posted_at": "2024-10-14T15:46:00Z"
+        }
+    },
+    {
+        "model": "adopets_platform.Pet",
+        "pk": 10,
+        "fields": {
+            "name": "Sophie",
+            "species": "Cat",
+            "breed": "Bengal",
+            "age": 3,
+            "description": "Energetic and friendly",
+            "photo": "path_to_photo",
+            "city": "Essen",
+            "country": "Germany",
+            "posted_by": 1,
+            "posted_at": "2024-10-14T15:46:00Z"
+        }
+    },
+    {
+        "model": "adopets_platform.Pet",
+        "pk": 11,
+        "fields": {
+            "name": "Rex",
+            "species": "Dog",
+            "breed": "German Shepherd",
+            "age": 5,
+            "description": "Loyal and protective",
+            "photo": "path_to_photo",
+            "city": "Bremen",
+            "country": "Germany",
+            "posted_by": 1,
+            "posted_at": "2024-10-14T15:46:00Z"
+        }
+    },
+    {
+        "model": "adopets_platform.Pet",
+        "pk": 12,
+        "fields": {
+            "name": "Mimi",
+            "species": "Cat",
+            "breed": "Persian",
+            "age": 4,
+            "description": "Calm and affectionate",
+            "photo": "path_to_photo",
+            "city": "Dresden",
+            "country": "Germany",
+            "posted_by": 1,
+            "posted_at": "2024-10-14T15:46:00Z"
+        }
+    },
+    {
+        "model": "adopets_platform.Pet",
+        "pk": 13,
+        "fields": {
+            "name": "Oscar",
+            "species": "Dog",
+            "breed": "Bulldog",
+            "age": 3,
+            "description": "Loyal and loving",
+            "photo": "path_to_photo",
+            "city": "Hannover",
+            "country": "Germany",
+            "posted_by": 1,
+            "posted_at": "2024-10-14T15:46:00Z"
+        }
+    },
+    {
+        "model": "adopets_platform.Pet",
+        "pk": 14,
+        "fields": {
+            "name": "Nala",
+            "species": "Cat",
+            "breed": "Scottish Fold",
+            "age": 2,
+            "description": "Playful and sweet",
+            "photo": "path_to_photo",
+            "city": "Nuremberg",
+            "country": "Germany",
+            "posted_by": 1,
+            "posted_at": "2024-10-14T15:46:00Z"
+        }
+    },
+    {
+        "model": "adopets_platform.Pet",
+        "pk": 15,
+        "fields": {
+            "name": "Coco",
+            "species": "Dog",
+            "breed": "Chihuahua",
+            "age": 2,
+            "description": "Small and spunky",
+            "photo": "path_to_photo",
+            "city": "Mannheim",
+            "country": "Germany",
+            "posted_by": 1,
+            "posted_at": "2024-10-14T15:46:00Z"
+        }
+    }
+]

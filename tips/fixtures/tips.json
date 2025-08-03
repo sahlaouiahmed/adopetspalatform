@@ -1,0 +1,167 @@
+[
+    {
+        "model": "tips.article",
+        "pk": 1,
+        "fields": {
+            "title": "Essential Dog Care Tips",
+            "content": "Caring for your dog involves regular checkups, a balanced diet, and lots of love. Ensure your dog gets plenty of exercise, regular grooming, and mental stimulation to keep them happy and healthy. Keep up with vaccinations and vet visits, and always provide fresh water. Socializing your dog from a young age can help prevent behavioral issues. Remember, positive reinforcement training is key!",
+            "category": "Dogs",
+            "author": 1,
+            "created_at": "2024-10-18T14:00:00Z"
+        }
+    },
+    {
+        "model": "tips.article",
+        "pk": 2,
+        "fields": {
+            "title": "Feeding Your Cat: Best Practices",
+            "content": "Cats are obligate carnivores, meaning they require a diet rich in animal protein. Avoid feeding your cat dog food, as it lacks essential nutrients. Provide clean, fresh water at all times. Monitor your cat's weight and adjust food portions accordingly. Consider a mix of wet and dry food for balanced nutrition. Regularly clean food and water dishes to prevent bacterial growth. Treats should be given in moderation to avoid obesity.",
+            "category": "Cats",
+            "author": 1,
+            "created_at": "2024-10-18T14:00:00Z"
+        }
+    },
+    {
+        "model": "tips.article",
+        "pk": 3,
+        "fields": {
+            "title": "How to Keep Your Fish Tank Clean",
+            "content": "Regular cleaning is essential to maintain a healthy environment for your fish. Perform partial water changes weekly to remove waste and toxins. Clean the tank glass to prevent algae buildup. Check the filter regularly and replace it as needed. Avoid overfeeding your fish, as uneaten food can pollute the tank. Ensure the water temperature and pH levels are appropriate for your fish species. Keep an eye on your fish's health and behavior for signs of illness.",
+            "category": "Fish",
+            "author": 1,
+            "created_at": "2024-10-18T14:00:00Z"
+        }
+    },
+    {
+        "model": "tips.article",
+        "pk": 4,
+        "fields": {
+            "title": "Bird Care: What You Need to Know",
+            "content": "Birds require a balanced diet, regular grooming, and a stimulating environment. Provide a variety of fresh fruits, vegetables, and high-quality bird food. Ensure your bird's cage is spacious and clean. Provide perches, toys, and opportunities for social interaction. Regularly trim your bird's nails and feathers, or have a professional do it. Monitor your bird for signs of stress or illness, and consult a vet if needed. Encourage your bird to exercise by flying in a safe space.",
+            "category": "Birds",
+            "author": 1,
+            "created_at": "2024-10-18T14:00:00Z"
+        }
+    },
+    {
+        "model": "tips.article",
+        "pk": 5,
+        "fields": {
+            "title": "Rabbit Care for Beginners",
+            "content": "Rabbits are social animals that need a lot of space to run and play. Provide a large, safe enclosure with plenty of room to hop around. Feed your rabbit a diet of hay, fresh vegetables, and high-quality pellets. Regularly clean their living space to prevent disease. Ensure they have access to fresh water at all times. Socialize your rabbit with gentle handling to build trust. Keep an eye on their dental health, as rabbits' teeth grow continuously. Offer toys and activities to keep them mentally stimulated.",
+            "category": "Rabbits",
+            "author": 1,
+            "created_at": "2024-10-18T14:00:00Z"
+        }
+    },
+    {
+        "model": "tips.article",
+        "pk": 6,
+        "fields": {
+            "title": "Training Your Dog: Basic Commands",
+            "content": "Teaching your dog basic commands like sit, stay, come, and heel can greatly improve their behavior and your bond. Use positive reinforcement techniques, be consistent, and practice daily. Start with short training sessions and gradually increase the duration. Remember, patience and persistence are key.",
+            "category": "Dogs",
+            "author": 1,
+            "created_at": "2024-10-20T14:00:00Z"
+        }
+    },
+    {
+        "model": "tips.article",
+        "pk": 7,
+        "fields": {
+            "title": "Understanding Cat Behavior",
+            "content": "Cats are known for their independent nature, but they also have unique ways of showing affection and communicating. Learn to recognize the signs of a happy cat, such as purring, kneading, and slow blinking. Understanding your cat's behavior can help you build a stronger bond and ensure their well-being.",
+            "category": "Cats",
+            "author": 1,
+            "created_at": "2024-10-20T15:00:00Z"
+        }
+    },
+    {
+        "model": "tips.article",
+        "pk": 8,
+        "fields": {
+            "title": "Choosing the Right Fish for Your Aquarium",
+            "content": "Selecting the right fish for your aquarium involves considering factors such as tank size, water conditions, and compatibility with other fish. Research the specific needs of each species and ensure your tank is properly set up before adding new fish. This can help maintain a healthy and harmonious aquatic environment.",
+            "category": "Fish",
+            "author": 1,
+            "created_at": "2024-10-21T09:00:00Z"
+        }
+    },
+    {
+        "model": "tips.article",
+        "pk": 9,
+        "fields": {
+            "title": "Bird Toys and Accessories: What You Need",
+            "content": "Providing your bird with a variety of toys and accessories can keep them mentally stimulated and prevent boredom. Choose toys that are safe, durable, and appropriate for your bird's size and species. Rotate toys regularly to keep things interesting and engage your bird's curiosity.",
+            "category": "Birds",
+            "author": 1,
+            "created_at": "2024-10-21T10:00:00Z"
+        }
+    },
+    {
+        "model": "tips.article",
+        "pk": 10,
+        "fields": {
+            "title": "Grooming Your Rabbit: Best Practices",
+            "content": "Regular grooming is essential to keep your rabbit's coat clean and healthy. Brush your rabbit's fur weekly to remove loose hair and prevent matting. Trim their nails regularly and check their ears for signs of infection. Grooming sessions can also be a great opportunity to bond with your rabbit.",
+            "category": "Rabbits",
+            "author": 1,
+            "created_at": "2024-10-21T11:00:00Z"
+        }
+    },
+    {
+        "model": "tips.article",
+        "pk": 11,
+        "fields": {
+            "title": "Dog-Friendly Home Decor Tips",
+            "content": "Creating a dog-friendly home involves choosing durable materials, incorporating pet-specific areas, and considering your dog's safety. Use washable slipcovers, stain-resistant fabrics, and non-toxic plants. Designate spaces for your dog's bed, toys, and feeding area to keep your home organized and pet-friendly.",
+            "category": "Dogs",
+            "author": 1,
+            "created_at": "2024-10-22T09:00:00Z"
+        }
+    },
+    {
+        "model": "tips.article",
+        "pk": 12,
+        "fields": {
+            "title": "Homemade Cat Treats: Easy Recipes",
+            "content": "Making homemade cat treats is a fun and rewarding way to provide your feline friend with healthy snacks. Use simple ingredients like chicken, tuna, and pumpkin. Ensure the treats are bite-sized and free from harmful additives. Store the treats in an airtight container and offer them as occasional rewards.",
+            "category": "Cats",
+            "author": 1,
+            "created_at": "2024-10-22T10:00:00Z"
+        }
+    },
+    {
+        "model": "tips.article",
+        "pk": 13,
+        "fields": {
+            "title": "Maintaining a Balanced Aquarium",
+            "content": "A balanced aquarium requires regular water changes, proper filtration, and monitoring of water parameters. Test the water weekly for pH, ammonia, nitrite, and nitrate levels. Ensure your aquarium is not overcrowded and provide a variety of hiding spots and plants to create a natural and stress-free environment for your fish.",
+            "category": "Fish",
+            "author": 1,
+            "created_at": "2024-10-22T11:00:00Z"
+        }
+    },
+    {
+        "model": "tips.article",
+        "pk": 14,
+        "fields": {
+            "title": "Building Trust with Your Bird",
+            "content": "Building trust with your bird involves patience, consistency, and positive reinforcement. Spend time near your bird's cage, talk to them softly, and offer treats from your hand. Gradually increase your interaction, and never force your bird to do something they are not comfortable with. Trust-building is a gradual process that requires time and dedication.",
+            "category": "Birds",
+            "author": 1,
+            "created_at": "2024-10-22T12:00:00Z"
+        }
+    },
+    {
+        "model": "tips.article",
+        "pk": 15,
+        "fields": {
+            "title": "Rabbit-Proofing Your Home",
+            "content": "Rabbit-proofing your home is essential to ensure your pet's safety. Cover electrical cords, secure low-hanging curtains, and block access to hazardous areas. Provide plenty of chew toys and hideouts to keep your rabbit entertained and engaged. Regularly inspect your home for potential hazards and make adjustments as needed.",
+            "category": "Rabbits",
+            "author": 1,
+            "created_at": "2024-10-22T13:00:00Z"
+        }
+    }
+]

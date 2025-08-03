@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}{{ article.title }}{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">{{ article.title }}</h2>
+    <p><strong>Category:</strong> {{ article.category }}</p>
+    <p><strong>Author:</strong> {{ article.author.username }}</p>
+    <p>{{ article.content }}</p>
+    <a href="{% url 'article_list' %}" class="btn btn-secondary">Back to Tips</a>
+</div>
+{% endblock %}

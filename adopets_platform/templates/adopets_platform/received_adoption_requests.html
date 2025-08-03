@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Received Adoption Requests{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Received Adoption Requests</h2>
+    {% if messages %}
+    <div class="alert alert-success" role="alert" id="success-message">
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+    </div>
+    <script>
+        setTimeout(function () {
+            var message = document.getElementById('success-message');
+            if (message) {
+                message.style.display = 'none';
+            }
+        }, 6000); // Hide message after 6 seconds
+    </script>
+    {% endif %}
+    {% if adoption_requests %}
+    <ul class="list-group mt-3">
+        {% for request in adoption_requests %}
+        <li class="list-group-item">
+            <div class="row align-items-center">
+                <div class="col-md-3 mb-3 mb-md-0">
+                    <img src="{{ request.pet.photo.url }}" alt="{{ request.pet.name }}" class="img-fluid rounded">
+                </div>
+                <div class="col-md-9">
+                    <div class="d-flex align-items-center mb-2 flex-wrap">
+                        <strong class="mr-2">Status:</strong>
+                        <form method="post" action="{% url 'update_status' request.id %}" class="d-flex align-items-center flex-wrap w-100">
+                            {% csrf_token %}
+                            <select name="status" class="form-control form-control-sm mx-2" style="max-width: 150px;">
+                                <option value="pending" {% if request.status == 'pending' %}selected{% endif %}>Pending</option>
+                                <option value="approved" {% if request.status == 'approved' %}selected{% endif %}>Approved</option>
+                                <option value="rejected" {% if request.status == 'rejected' %}selected{% endif %}>Rejected</option>
+                            </select>
+                            <button type="submit" class="btn btn-primary btn-sm">Update</button>
+                        </form>
+                    </div>
+                    <strong>Pet Name:</strong> {{ request.pet.name }}<br>
+                    <strong>Message:</strong> {{ request.message }}<br>
+                    <strong>Requested By:</strong> {{ request.requester.username }}<br>
+                    <strong>Requested On:</strong> {{ request.created_at|date:"d M Y" }}
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p class="text-center mt-5">You have not received any adoption requests yet.</p>
+    {% endif %}
+</div>
+<br><br>
+{% endblock %}

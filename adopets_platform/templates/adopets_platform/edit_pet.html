@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}Edit {{ pet.name }} Details{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Edit {{ pet.name }} Details</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+            <a href="{% url 'my_posted_pets' %}" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>
+<br>
+<br>
+{% endblock %}

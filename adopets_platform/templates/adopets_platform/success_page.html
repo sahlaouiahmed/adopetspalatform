@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Request Successful{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Request Successful</h2>
+    <p class="text-center">Thank you! Your adoption request has been submitted successfully. We will get back to you shortly.</p>
+    <div class="text-center">
+        <a href="{% url 'index' %}" class="btn btn-primary">Go to Home</a>
+    </div>
+</div>
+{% endblock %}

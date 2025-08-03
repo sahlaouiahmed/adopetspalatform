@@ -1,0 +1,94 @@
+{% load static %}{% url 'account_login' as login_url %}{% url 'account_signup' as signup_url %}{% url 'account_logout' as logout_url %}{% url 'index' as index_url %}{% url 'article_list' as article_list_url %}{% url 'about' as about_url %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Adopets Platform{% endblock %}</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="d-flex flex-column min-vh-100">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-1">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'index' %}">Adopets</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item {% if request.path == index_url %}active{% endif %}">
+                            <a class="nav-link" href="{% url 'index' %}">Home</a>
+                        </li>
+                        <li class="nav-item {% if request.path == article_list_url %}active{% endif %}">
+                            <a class="nav-link" href="{% url 'article_list' %}">Pet Care Tips</a>
+                        </li>
+                        <li class="nav-item {% if request.path == about_url %}active{% endif %}">
+                            <a class="nav-link" href="{% url 'about' %}">About Us</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        {% if user.is_authenticated %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-user"></i> {{ user.username }}
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="{% url 'my_posted_pets' %}">My Posted Pets</a>
+                                <a class="dropdown-item" href="{% url 'my_adoption_requests' %}">My Adoption Requests</a>
+                                <a class="dropdown-item" href="{% url 'received_adoption_requests' %}">Received Adoption Requests</a>
+                                <a class="dropdown-item" href="{% url 'my_articles' %}">My Articles</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                            </div>
+                        </li>
+                        {% else %}
+                        <li class="nav-item {% if request.path == login_url %}active{% endif %}">
+                            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                        </li>
+                        <li class="nav-item {% if request.path == signup_url %}active{% endif %}">
+                            <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <main class="flex-grow-1 page-container mt-4">
+            {% block content %}
+            {% endblock %}
+        </main>
+        <footer class="bg-dark text-white text-center py-2 mt-auto">
+            <div class="container">
+                <p class="mb-0">&copy; <span id="currentYear"></span> Adopets Platform. All rights reserved.</p>
+                <p>Email: <a href="mailto:support@adopets.com" class="text-white">support@adopets.com</a> | Phone: <a href="tel:+11234567890" class="text-white">+1 (123) 456-7890</a> | Address: 123 Adopets Avenue, Pet City, PC 12345</p>
+                <div class="mt-2">
+                    <a href="https://www.facebook.com" target="_blank" class="text-white mr-3">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank" class="text-white mr-3">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" class="text-white mr-3">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank" class="text-white">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <script>
+                document.getElementById("currentYear").textContent = new Date().getFullYear();
+            </script>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
