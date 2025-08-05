@@ -7,8 +7,6 @@ Additionally, explore our comprehensive library of pet care articles to provide 
 Our website is deployed on Heroku. Check it out [here](https://adopetsplatform-4e35c86a8c8e.herokuapp.com/).
 
 
-
-
 ## User Stories
 
 User stories are part of the Agile framework for software development. They guide the selection of features built on this website and explain the reasoning behind the chosen features.
@@ -137,8 +135,8 @@ Explore our comprehensive library of articles on pet care. From feeding tips to 
 ### Django
 Django is the backbone of our platform. It’s a high-level Python web framework that encourages rapid development and clean, pragmatic design. Django takes care of much of the hassle of web development, allowing us to focus on writing your app without needing to reinvent the wheel. 
 
-### PostgreSQL
-We use PostgreSQL as our database management system. It’s a powerful, open-source object-relational database system that has earned a strong reputation for reliability, feature robustness, and performance.
+### Mysql
+We use Mysql as our database management system. It’s a powerful, open-source object-relational database system that has earned a strong reputation for reliability, feature robustness, and performance.
 
 ### JavaScript
 JavaScript powers the interactive elements of our site, ensuring a smooth and dynamic user experience. It's an essential technology for making our web pages more engaging and functional.
@@ -441,7 +439,7 @@ This project is deployed to Heroku using the GitHub integration. Follow the step
 ### Tools and Technologies
 
 - **Django**: The high-level Python web framework that enabled rapid development.
-- **PostgreSQL**: For robust and scalable database 
+- **Mysql**: For robust and scalable database 
 - **Bootstrap**: For styling and responsive design.
 - **Font Awesome**: For beautiful and scalable icons.
 - **Crispy Forms**: For better form styling and control.
