@@ -16,7 +16,6 @@ Our website is deployed on Heroku. Check it out [here](https://adopetplatform-cb
 
 
 
-
 ## User Stories
 
 User stories are part of the Agile framework for software development. They guide the selection of features built on this website and explain the reasoning behind the chosen features.
