@@ -4,7 +4,7 @@ Welcome to Adopets Platform, your go-to solution for pet adoption! Our platform 
 
 Additionally, explore our comprehensive library of pet care articles to provide the best for your new furry friends. Share your experiences, tips, and stories with other pet lovers in our community, and learn from others' experiences to make the journey of pet adoption even more rewarding.
 
-Our website is deployed on Heroku. Check it out [here](https://adopetsplatform-4e35c86a8c8e.herokuapp.com/).
+Our website is deployed on Heroku. Check it out [here](https://adopetplatform-cbfb1a3d3981.herokuapp.com/).
 
 
 ## User Stories
