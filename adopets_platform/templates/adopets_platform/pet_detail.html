@@ -38,6 +38,7 @@
             <p><strong>Posted on:</strong> {{ pet.posted_at|date:"d M Y" }}</p>
             <hr>
             <a href="{% url 'adopt_request' pet.id %}" class="btn btn-primary">Request to Adopt</a>
+            <a href="{% url 'contact_owner' pet.id %}" class="btn btn-warning ml-2">Contact Owner</a>
         </div>
     </div>
 </div>

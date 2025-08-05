@@ -45,3 +45,14 @@ class AdoptionRequest(models.Model):
     class Meta:
         ordering = ["-created_at"]
 
+from django.db import models
+
+class ContactMessage(models.Model):
+    pet = models.ForeignKey('Pet', on_delete=models.CASCADE, related_name='messages')
+    sender_name = models.CharField(max_length=100)
+    sender_email = models.EmailField()
+    message = models.TextField()
+    sent_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'Message from {self.sender_name} about {self.pet.name}'

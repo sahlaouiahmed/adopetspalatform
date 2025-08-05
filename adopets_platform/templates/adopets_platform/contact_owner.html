@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Contact Owner{% endblock %}
+{% load form_extras %}
+
+{% block content %}
+<div class="container mt-5">
+
+    <!-- Back to pet detail -->
+    <a href="{% url 'pet_detail' pet.id %}" class="btn btn-outline-secondary mb-4">
+        <i class="fas fa-arrow-left"></i> Back to {{ pet.name }}
+    </a>
+
+    <div class="card shadow p-4">
+        <h2 class="mb-4 text-center">Contact {{ pet.posted_by.username }} about <span class="text-primary">{{ pet.name }}</span></h2>
+
+        {% if messages %}
+        <div class="alert alert-success" role="alert">
+            {% for message in messages %}
+            {{ message }}
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="id_name">Your Name</label>
+                {{ form.name|add_class:"form-control" }}
+            </div>
+
+            <div class="form-group mt-3">
+                <label for="id_email">Your Email</label>
+                {{ form.email|add_class:"form-control" }}
+            </div>
+
+            <div class="form-group mt-3">
+                <label for="id_message">Message</label>
+                {{ form.message|add_class:"form-control" }}
+            </div>
+
+            <button type="submit" class="btn btn-success mt-4 px-4">
+                <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}

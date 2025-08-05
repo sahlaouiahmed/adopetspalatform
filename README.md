@@ -2,7 +2,15 @@
 
 Welcome to Adopets Platform, your go-to solution for pet adoption! Our platform is designed to simplify and enhance the pet adoption process, making it easier for potential adopters to connect with pet owners. With Adopets, finding a loving home for every pet is just a few clicks away. Whether you're looking to adopt a pet or rehome a pet, our user-friendly interface and powerful search capabilities ensure a seamless experience for all users.
 
-Additionally, explore our comprehensive library of pet care articles to provide the best for your new furry friends. Share your experiences, tips, and stories with other pet lovers in our community, and learn from others' experiences to make the journey of pet adoption even more rewarding.
+🐶 New! Personalized Email Notifications We’ve recently introduced a suite of email services to keep you informed every step of the way:
+
+📩 Automatic status updates on your adoption requests — whether approved, rejected, or pending.
+
+🐾 Friendly and informative approval emails with all the details you need to reach the pet’s owner and arrange a smooth handover.
+
+💔 Compassionate rejection messages that gently encourage users to explore other loving pets on our platform. These messages help ensure transparency, timeliness, and care throughout the adoption process — because every pet deserves a happy beginning.
+
+📚 Additionally, explore our comprehensive library of pet care articles to provide the best for your new furry friends. Share your experiences, tips, and stories with other pet lovers in our community, and learn from others' experiences to make the journey of pet adoption even more rewarding.
 
 Our website is deployed on Heroku. Check it out [here](https://adopetplatform-cbfb1a3d3981.herokuapp.com/).
 

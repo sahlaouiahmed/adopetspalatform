@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from .models import Pet, AdoptionRequest
 from django.contrib.auth.models import User
-from .forms import UserRegistrationForm, PetSearchForm, AdoptionRequestForm, AdoptionRequestFilterForm, PetForm
+from .forms import PetSearchForm, AdoptionRequestForm, AdoptionRequestFilterForm, PetForm
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
@@ -130,18 +130,64 @@ def received_adoption_requests(request):
     return render(request, 'adopets_platform/received_adoption_requests.html', {'adoption_requests': adoption_requests})
 
 # Update the status of an adoption request
+
 @require_POST
 @login_required
 def update_status(request, request_id):
     adoption_request = get_object_or_404(AdoptionRequest, id=request_id)
     new_status = request.POST.get('status')
+
     if new_status in ['pending', 'approved', 'rejected']:
         adoption_request.status = new_status
         adoption_request.save()
+
+        # Prepare dynamic message based on status
+        if new_status == 'approved':
+            message_body = (
+                f"Dear {adoption_request.requester.first_name},\n\n"
+                f"Fantastic news! Your adoption request for {adoption_request.pet.name} has been **APPROVED** 🎉.\n\n"
+                f"Here are the details:\n"
+                f"- Pet Name: {adoption_request.pet.name}\n"
+                f"- Breed: {adoption_request.pet.breed}\n"
+                f"- Age: {adoption_request.pet.age} years\n"
+                f"- Owner Name: {adoption_request.pet.posted_by.get_full_name()}\n"
+                f"- Owner Contact: {adoption_request.pet.posted_by.email}\n\n"
+                "Please reach out to the owner to arrange pickup or delivery. They will provide further guidance.\n\n"
+                "We’re thrilled for you — congratulations on your new furry friend!\n\n"
+                "Warm regards,\n"
+                "Adopets Team 🐾"
+            )
+        elif new_status == 'rejected':
+            message_body = (
+                f"Dear {adoption_request.requester.first_name},\n\n"
+                f"We're sorry to inform you that your request to adopt {adoption_request.pet.name} has been **REJECTED**.\n\n"
+                "Don't worry — there are many pets still looking for loving homes on our platform. 💔🐶🐱\n"
+                "Explore the listings and find your perfect companion!\n\n"
+                "Thank you for being part of Adopets."
+            )
+        else:
+            message_body = (
+                f"Dear {adoption_request.requester.first_name},\n\n"
+                f"Your request to adopt {adoption_request.pet.name} is currently **PENDING**.\n\n"
+                "The pet’s owner is reviewing your application. We’ll notify you once there is an update.\n\n"
+                "Thank you for your patience!"
+            )
+
+        # Send email to requester
+        send_mail(
+            subject=f'Adopets Update: {adoption_request.pet.name} adoption status',
+            message=message_body,
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=[adoption_request.requester.email],
+            fail_silently=False,
+        )
+
         messages.success(request, f'Status updated to {new_status}.')
     else:
         messages.error(request, 'Invalid status update.')
+
     return redirect('received_adoption_requests')
+
 
 # Display the pets posted by the user
 @login_required
@@ -205,3 +251,47 @@ def delete_pet(request, pet_id):
     pet.delete()
     messages.success(request, 'Pet deleted successfully.')
     return redirect('my_posted_pets')
+
+
+from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib import messages
+from .models import Pet, ContactMessage  # Pet and ContactMessage
+from .forms import ContactOwnerForm
+
+@login_required
+def contact_owner(request, pet_id):
+    pet = get_object_or_404(Pet, id=pet_id)
+
+    if request.method == 'POST':
+        form = ContactOwnerForm(request.POST)
+        if form.is_valid():
+            # Extract form data
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message_content = form.cleaned_data['message']
+
+            # Save the message to DB
+            ContactMessage.objects.create(
+                pet=pet,
+                sender_name=name,
+                sender_email=email,
+                message=message_content
+            )
+            # Send email to pet owner
+            send_mail(
+                subject=f"New message about your pet: {pet.name}",
+                message=f"Name: {name}\nEmail: {email}\n\nMessage:\n{message_content}",
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=[pet.posted_by.email],  # Assuming pet.owner.email exists
+                fail_silently=False,
+            )
+
+            messages.success(request, 'Your message has been sent to the owner!')
+            return redirect('pet_detail', pet_id=pet.id)
+    else:
+        form = ContactOwnerForm()
+
+    return render(request, 'adopets_platform/contact_owner.html', {
+        'pet': pet,
+        'form': form
+    })

@@ -1,21 +1,22 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
 from .models import User, AdoptionRequest
 from .models import Pet
 
 # Form for registering new users
-class UserRegistrationForm(UserCreationForm):
-    email = forms.EmailField(required=True)
+from allauth.account.forms import SignupForm
+from django import forms
 
-    class Meta:
-        model = User
-        fields = ('username', 'email', 'password1', 'password2')
+class CustomSignupForm(SignupForm):
+    first_name = forms.CharField(max_length=30, label='First Name')
+    last_name = forms.CharField(max_length=30, label='Last Name')
 
-    def clean_email(self):
-        email = self.cleaned_data.get('email')
-        if not email:
-            raise forms.ValidationError("This field is required.")
-        return email
+    def save(self, request):
+        user = super().save(request)
+        user.first_name = self.cleaned_data['first_name']
+        user.last_name = self.cleaned_data['last_name']
+        user.save()
+        return user
+
 
 # Form for searching pets with optional criteria
 class PetSearchForm(forms.Form):
@@ -88,3 +89,10 @@ class PetForm(forms.ModelForm):
             'city': forms.TextInput(attrs={'class': 'form-control'}),
             'country': forms.TextInput(attrs={'class': 'form-control'}),
         }
+        
+        
+
+class ContactOwnerForm(forms.Form):
+    name = forms.CharField(max_length=100, label='Your Name')
+    email = forms.EmailField(label='Your Email')
+    message = forms.CharField(widget=forms.Textarea, label='Your Message')

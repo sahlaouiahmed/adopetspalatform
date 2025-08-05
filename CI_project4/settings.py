@@ -31,7 +31,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['8000-sahlaouiahm-adopetsplat-pk9ymb7wjw2.ws.codeinstitute-ide.net','127.0.0.1', 'localhost','.herokuapp.com']
 
@@ -58,6 +58,10 @@ INSTALLED_APPS = [
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+ACCOUNT_FORMS = {
+    'signup': 'adopets_platform.forms.CustomSignupForm'
+}
+
 
 
 SITE_ID = 1
