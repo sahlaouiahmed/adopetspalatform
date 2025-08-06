@@ -45,3 +45,18 @@ class AdoptionRequest(models.Model):
     class Meta:
         ordering = ["-created_at"]
 
+
+#__________________________________________#
+
+from django.db import models
+from .models import Pet  # or adjust if Pet is in another module
+
+class ContactMessage(models.Model):
+    sender_name = models.CharField(max_length=100)
+    sender_email = models.EmailField()
+    message = models.TextField()
+    sent_at = models.DateTimeField(auto_now_add=True)
+    pet = models.ForeignKey(Pet, on_delete=models.CASCADE, related_name='contact_messages')
+
+    def __str__(self):
+        return f"{self.sender_name} → {self.pet.name} @ {self.sent_at.strftime('%Y-%m-%d %H:%M')}"
