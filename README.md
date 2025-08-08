@@ -170,7 +170,7 @@ Bootstrap is a popular front-end framework for developing responsive and mobile-
 ### Dashboard
 - **User Dashboard**: Once logged in, users have access to a personalized dashboard where they can manage their posted pets, adoption requests, recieved adoption requests and their posted articles . The dashboard provides an overview of their activity on the platform.
 
-![Home page ](static/images/readme_photos/home.png)
+![Home page ](static\images\readme_photos\index-page.png)
 
 
 ### Posting Pets
