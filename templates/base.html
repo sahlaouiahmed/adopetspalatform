@@ -11,45 +11,47 @@
 </head>
 <body>
     <div class="d-flex flex-column min-vh-100">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-1 sticky-top ">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-1 sticky-top">
             <div class="container">
-                <a class="navbar-brand" href="{% url 'index' %}">Adopets</a>
+                <a class="navbar-brand" href="{% url 'index' %}" style="font-size: 1.6rem; font-weight: 700; letter-spacing: 1px; color: #00bfa5;">
+                    <i class="fas fa-paw mr-1"></i> Adopets
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item {% if request.path == index_url %}active{% endif %}">
-                            <a class="nav-link" href="{% url 'index' %}">Home</a>
+                            <a class="nav-link" href="{% url 'index' %}" style="font-size: 1.2rem; font-weight: bold;">Home</a>
                         </li>
                         <li class="nav-item {% if request.path == article_list_url %}active{% endif %}">
-                            <a class="nav-link" href="{% url 'article_list' %}">Pet Care Tips</a>
+                            <a class="nav-link" href="{% url 'article_list' %}" style="font-size: 1.2rem; font-weight: bold;">Pet Care Tips</a>
                         </li>
                         <li class="nav-item {% if request.path == about_url %}active{% endif %}">
-                            <a class="nav-link" href="{% url 'about' %}">About Us</a>
+                            <a class="nav-link" href="{% url 'about' %}" style="font-size: 1.2rem; font-weight: bold;">About Us</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav ml-auto">
                         {% if user.is_authenticated %}
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 1.2rem; font-weight: bold;">
                                 <i class="fas fa-user"></i> {{ user.username }}
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="{% url 'my_posted_pets' %}">My Posted Pets</a>
-                                <a class="dropdown-item" href="{% url 'my_adoption_requests' %}">My Adoption Requests</a>
-                                <a class="dropdown-item" href="{% url 'received_adoption_requests' %}">Received Adoption Requests</a>
-                                <a class="dropdown-item" href="{% url 'my_articles' %}">My Articles</a>
+                                <a class="dropdown-item" href="{% url 'my_posted_pets' %}" style="font-weight: bold;">My Posted Pets</a>
+                                <a class="dropdown-item" href="{% url 'my_adoption_requests' %}" style="font-weight: bold;">My Adoption Requests</a>
+                                <a class="dropdown-item" href="{% url 'received_adoption_requests' %}" style="font-weight: bold;">Received Adoption Requests</a>
+                                <a class="dropdown-item" href="{% url 'my_articles' %}" style="font-weight: bold;">My Articles</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                                <a class="dropdown-item" href="{% url 'account_logout' %}" style="font-weight: bold;">Logout</a>
                             </div>
                         </li>
                         {% else %}
                         <li class="nav-item {% if request.path == login_url %}active{% endif %}">
-                            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                            <a class="nav-link" href="{% url 'account_login' %}" style="font-size: 1.2rem; font-weight: bold;">Login</a>
                         </li>
                         <li class="nav-item {% if request.path == signup_url %}active{% endif %}">
-                            <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                            <a class="nav-link" href="{% url 'account_signup' %}" style="font-size: 1.2rem; font-weight: bold;">Register</a>
                         </li>
                         {% endif %}
                     </ul>
